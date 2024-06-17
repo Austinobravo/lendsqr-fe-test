@@ -1,0 +1,20 @@
+@font-face {
+    font-family: "avenirnextregular";
+    src: local("AvenirNextCyr-Regular"),
+     url("../fonts/AvenirNextCyr-Regular.woff") format("woff");
+}
+
+$primary: #39CDCC;
+
+@mixin breakpoint($point){
+    @if $point == md{
+        //768px == 48em
+        @media(min-width: 48em){
+            @content 
+        }
+    }
+}
+
+body{
+    font-family: "avenirnextregular";
+}
