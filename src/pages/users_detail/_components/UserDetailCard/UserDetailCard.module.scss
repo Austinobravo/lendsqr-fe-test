@@ -1,0 +1,33 @@
+$primary: #39CDCC;
+$secondary: #213F7D;
+
+.user_detail{
+    padding: 2rem 2rem 0 280px;
+
+    &__navigate_back{
+        display: flex;
+        align-items: center;
+        a{
+            color: $secondary;
+            opacity: .8;
+            text-decoration: none;
+            margin-left: 7px;
+            font-size: 13px;
+        }
+    }
+    &__button_heading{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem 0;
+        h2{
+            color: $secondary;
+            font-weight: 600;
+        }
+        button{
+
+        }
+    }
+
+
+}
