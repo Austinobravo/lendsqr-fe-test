@@ -4,23 +4,31 @@ import classes from './Users.module.scss'
 const UserDetails = [
     {
         icon: BiUser,
+        iconColor: '#DF18FF',
+        bgColor: "#f0d2f8",
         title: "USERS",
-        total: 2453
+        total: "2,453"
     },
     {
         icon: BiUser,
+        iconColor: '#5718FF',
+        bgColor: "#d4c6f8",
         title: "ACTIVE USERS",
-        total: 2453
+        total: "2,453"
     },
     {
         icon: BiUser,
+        iconColor: '#F55F44',
+        bgColor: "#fccdc5",
         title: "USERS WITH LOANS",
-        total: 12453
+        total: "12,453"
     },
     {
         icon: BiUser,
+        iconColor: '#FF3366',
+        bgColor: "#facad6",
         title: "USERS WITH SAVINGS",
-        total: 102453
+        total: "102,453"
     },
 ]
 const Users = () => {
@@ -32,8 +40,8 @@ const Users = () => {
         <div className={classes.users__details}>
             {UserDetails.map((user, index) => (
                 <div key={index} className={classes.users__individual_details}>
-                    <div>
-                        <user.icon/>
+                    <div style={{backgroundColor: user.bgColor, width: "fit-content", borderRadius: '50%', padding: "5px"}}>
+                        <user.icon color={user.iconColor}/>
                     </div>
                     <h3>{user.title}</h3>
                     <p>{user.total}</p>
