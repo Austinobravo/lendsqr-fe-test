@@ -6,6 +6,7 @@ import { HiOutlineDotsHorizontal } from 'react-icons/hi'
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io'
 import FiltersForm from '../FiltersForm/FiltersForm'
 import { BiUser } from 'react-icons/bi'
+import { Link } from 'react-router-dom'
 
 const TableContents = [
     {
@@ -123,15 +124,15 @@ const UsersTable = () => {
             <div className={classes.card_filter}>
                 <div>
                     <BsEye/>
-                    <span> View Details</span>
+                    <Link to={`/dashboard/grace`}> View Details</Link>
                 </div>
                 <div>
                     <BiUser/>
-                    <span> Blacklist User</span>
+                    <Link to={``}> Blacklist User</Link>
                 </div>
                 <div>
                     <BsEye/>
-                    <span> Activate User</span>
+                    <Link to={``}> Activate User</Link>
                 </div>
 
             </div>

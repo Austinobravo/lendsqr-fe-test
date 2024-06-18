@@ -19,15 +19,131 @@ $secondary: #213F7D;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 1rem 0;
+        padding: 1rem 0 3rem 0;
         h2{
             color: $secondary;
             font-weight: 600;
         }
-        button{
-
-        }
+        
+    }
+    &__blacklist{
+        background-color: transparent;
+        color: #E4033B;
+        border: 1px solid #E4033B;
+        border-radius: 5px;
+        padding: 7px 20px;
+        font-weight: 600;
+        cursor: pointer;
+    }
+    &__activate{
+        background-color: transparent;
+        color: $primary;
+        border: 1px solid $primary;
+        border-radius: 5px;
+        padding: 7px 20px;
+        font-weight: 600;
+        margin: 0 5px 0 15px;
+        cursor: pointer;
     }
 
+
+}
+
+.user_card{
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 0px 4px  #e8e7e7 ;
+
+
+    &__details{
+        display: flex;
+        padding: 3rem 1rem;
+
+        &_img{
+            background-color: #ddd;
+            padding: 20px;
+            border-radius: 50%;
+        }
+
+        &_name{
+          border-right: 1px solid #ddd;
+          padding: 0 1rem;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          gap: 5px;
+          
+          h2{
+            color: $secondary;
+            font-weight: 600;
+          }
+          p{
+            opacity: .6;
+            font-size: 13px;
+          }
+        }
+
+        &_rating{
+          border-right: 1px solid #ddd;
+          padding: 0 1rem;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          gap: 5px;
+          h3{
+            font-size: 13px;
+            opacity: .6;
+          }
+        }
+
+        &_amount{
+          padding: 0 1rem;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          gap: 5px;
+
+          h3{
+            color: $secondary;
+        }
+        p{
+            color: $secondary;
+            opacity: .8;
+            font-size: 11px;
+          }
+        }
+    }
+}
+
+ul{
+    padding: 0 1rem;
+    li{
+        list-style: none;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        a{
+            color: #000;
+            text-decoration: none;
+            padding-bottom: 7px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            font-size: 13px;
+            font-weight: 500;
+
+
+        }
+        hr{
+            border: 1px solid $primary;
+            width: 140px;
+            margin-top: 7px;
+            position: absolute;
+            bottom: 0;
+        }
+
+    }
 
 }

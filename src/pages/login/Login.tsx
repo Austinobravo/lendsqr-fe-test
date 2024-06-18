@@ -11,7 +11,9 @@ const Login = () => {
     <section className={classes.container}>
       <div className={classes.flex}>
         <div className={classes.images}>
+          <Link to={`/`}>
             <img src={Logo} alt="Logo" width={150} className={classes.logo} />
+          </Link>
             <img src={Banner} alt="Banner" className={classes.banner}/>
         </div>
         <div className={classes.login_form}>

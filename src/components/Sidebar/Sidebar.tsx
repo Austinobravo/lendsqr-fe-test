@@ -5,6 +5,7 @@ import { MdDashboard } from 'react-icons/md'
 import { Link } from 'react-router-dom'
 import { RiArrowDropDownLine } from "react-icons/ri";
 import classes from './Sidebar.module.scss'
+import { IoLogOut } from 'react-icons/io5'
 const SidebarContents = [
     {
         title: "CUSTOMERS",
@@ -119,6 +120,11 @@ const SidebarContents = [
                 title: "Audit Logs",
                 path: ""
             },
+            {
+                icon: BiUser,
+                title: "System Messages",
+                path: ""
+            },
         ]
     },
    
@@ -140,7 +146,7 @@ const Sidebar = () => {
                 <h2>{content.title}</h2>
                 <div className={classes.sidebar__downlines}>
                     {content.downline.map((downlines, index) => (
-                        <Link to={downlines.path} key={index}>
+                        <Link to={downlines.path} key={index} style={{borderLeft: downlines.title === 'Users' ? "3px solid #39CDCC": '', margin: downlines.title === 'Users' ? '0 -20px 0 -20px' : '', paddingLeft: downlines.title === 'Users' ? '20px': '', backgroundColor: downlines.title === 'Users' ? '#ecf7f7' :''}}>
                             <downlines.icon/>
                             <span>
                                 {downlines.title}
@@ -152,6 +158,15 @@ const Sidebar = () => {
 
             </div>
         ))}
+        <div className={classes.sidebar__logout}>
+            <Link to={``}>
+                <IoLogOut style={{position: "absolute", }}/>
+                <span>
+                    Logout
+                </span>
+            </Link>
+
+        </div>
         
     </section>
   )

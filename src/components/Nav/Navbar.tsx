@@ -10,9 +10,9 @@ const Navbar = () => {
   return (
     <section className={classes.nav}>
         <div className={classes.nav__logo_form}>
-            <div className={classes.nav__logo}>
+            <Link to={`/`} className={classes.nav__logo}>
                 <img src={Logo} width={150} alt='logo'/>
-            </div>
+            </Link>
             <div className={classes.nav__form}>
                 <form>
                     <div>
@@ -34,7 +34,7 @@ const Navbar = () => {
             <div className={classes.nav__personal_details_avatar}>
                 <img src={Avatar} alt='avatar'/>
                 <h2>Adedeji</h2>
-                <MdOutlineArrowDropDown/>
+                <MdOutlineArrowDropDown style={{cursor: 'pointer'}}/>
             </div>
         </div>
 
