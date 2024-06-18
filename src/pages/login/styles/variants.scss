@@ -1,7 +1,12 @@
 @font-face {
-    font-family: "avenirnextregular";
-    src: local("AvenirNextCyr-Regular"),
-     url("../fonts/AvenirNextCyr-Regular.woff") format("woff");
+    font-family: "avenirnextmedium";
+    src: local("AvenirNextCyr-Medium"),
+     url("../fonts/AvenirNextCyr-Medium.woff") format("woff");
+}
+@font-face {
+    font-family: "avenirnextbold";
+    src: local("AvenirNextCyr-Bold"),
+     url("../fonts/AvenirNextCyr-Bold.woff") format("woff");
 }
 
 $primary: #39CDCC;
@@ -9,12 +14,14 @@ $primary: #39CDCC;
 @mixin breakpoint($point){
     @if $point == md{
         //768px == 48em
-        @media(min-width: 48em){
+        @media(max-width: 48em){
             @content 
         }
     }
+    
 }
 
 body{
-    font-family: "avenirnextregular";
+    font-family: "avenirnextmedium";
+    background-color: rgba(207, 207, 207, 0.1);
 }

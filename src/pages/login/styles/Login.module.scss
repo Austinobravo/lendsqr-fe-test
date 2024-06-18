@@ -6,3 +6,107 @@
     padding: 0;
 }
 
+.flex{
+    display: flex;
+}
+.images{
+    display: flex;
+    flex-direction: column;
+    padding: 3rem;
+    flex-basis: 50%;
+    @include breakpoint(md){
+        display: none;
+    }
+}
+.banner{
+    padding: 4rem 0 0;
+}
+
+
+.login_form{
+    background-color: #fff;
+    height: 100vh;
+    width: 100%;
+    max-width: 1920px;
+    padding: 0 3rem;
+    flex-basis: 50%;
+    @include breakpoint(md){
+        flex-basis: 100%;
+    }
+    
+
+    &__text{
+        margin-top: 8rem ;
+        margin-bottom: 2rem;
+    }
+
+    &__heading{
+        color: #213F7D;
+        font-size: 2.3rem;
+        font-family: 'avenirnextbold';
+        @include breakpoint(md){
+            font-size: 1.5rem;
+        }
+        
+    }
+    &__paragraph{
+        font-size: .9rem;
+        opacity: 0.5;
+        padding-top: 7px;
+    }
+
+    &__input{
+        border: 2px solid #eee;
+        border-radius: 5px;
+        padding: 8px 10px;
+        width: 100%;
+        margin-bottom: 10px;
+        display: flex;
+    }
+
+    input{
+        outline: none;
+        border: none;
+        width: 100%;
+        background-color: #000 !important; 
+        &:focus{
+            background-color: #fff !important;
+        }
+        &:hover{
+            background-color: #fff !important;
+        }
+        &:active{
+            background-color: #fff !important;
+        }
+        &::placeholder{
+            font-weight: 500;
+        }
+    }
+
+    &__span{
+        color: $primary;
+        font-size: 12px;
+        cursor: pointer;
+        
+    }
+    &__forgot_password{
+        margin: 20px 0 30px;
+    }
+
+    a{
+        color: $primary;
+        font-size: 13px;
+        text-decoration: none;
+        padding: 20px 0;
+    }
+
+
+    button{
+        background-color: $primary;
+        border: none;
+        width: 100%;
+        color: #fff;
+        padding: 10px 0;
+        border-radius: 5px;
+    }
+}
