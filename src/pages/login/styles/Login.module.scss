@@ -5,10 +5,14 @@
     margin: 0;
     padding: 0;
 }
+.container{
+    font-family: "avenirnextmedium";
+}
 
 .flex{
     display: flex;
 }
+
 .images{
     display: flex;
     flex-direction: column;
@@ -18,6 +22,7 @@
         display: none;
     }
 }
+
 .banner{
     padding: 4rem 0 0;
 }

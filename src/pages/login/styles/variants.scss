@@ -10,6 +10,7 @@
 }
 
 $primary: #39CDCC;
+$secondary: #213F7D;
 
 @mixin breakpoint($point){
     @if $point == md{
@@ -22,6 +23,5 @@ $primary: #39CDCC;
 }
 
 body{
-    font-family: "avenirnextmedium";
     background-color: rgba(207, 207, 207, 0.1);
 }
