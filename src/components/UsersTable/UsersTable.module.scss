@@ -1,3 +1,12 @@
+@mixin breakpoint($point){
+    @if $point == md{
+        //768px == 48em
+        @media(max-width: 48em){
+            @content 
+        }
+    }
+    
+}
 $primary: #39CDCC;
 $secondary: #213F7D;
 
@@ -5,6 +14,10 @@ $secondary: #213F7D;
     margin: 2rem 2rem 0 280px;
     font-size: .8rem;
     position: relative;
+    @include breakpoint(md){
+        margin: 2rem 2rem 0 60px;
+        overflow-x: scroll;
+    }
     
     table{
         box-shadow: 0px 0px 4px  #e8e7e7 ;
@@ -19,6 +32,12 @@ $secondary: #213F7D;
         font-weight: 600;
         font-size: .8em;
         text-align: left;
+        @include breakpoint(md){
+            &:not(:first-child){
+                padding-left: 30px;
+            }
+
+        }
          
         span{
             padding-left: 5px;
@@ -69,6 +88,9 @@ $secondary: #213F7D;
     justify-content: space-between;
     width: 100%;
     padding: 1rem 0;
+    @include breakpoint(md){
+       flex-wrap: wrap;
+    }
 
     &__filter{
         display: flex;
@@ -93,6 +115,9 @@ $secondary: #213F7D;
     &__pagination{
         display: flex;
         align-items: center;
+        @include breakpoint(md){
+            padding: 1rem 0;
+        }
         div{
             border: none;
             color: $secondary;
@@ -131,6 +156,10 @@ $secondary: #213F7D;
     position: absolute;
     top: 80px;
     right: -9px;
+    @include breakpoint(md){
+       
+        
+    }
     div{
         padding: 7px 0;
         display: flex;

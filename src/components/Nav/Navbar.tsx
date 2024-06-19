@@ -1,12 +1,15 @@
 import React from 'react'
 import { BiBell, BiSearch } from 'react-icons/bi'
-import { MdOutlineArrowDropDown } from "react-icons/md"
+import { MdOutlineArrowDropDown, MdOutlineClose } from "react-icons/md"
 import { Link } from 'react-router-dom'
 import Avatar from '../../pages/dashboard/assets/image 4.png'
 import Logo from '../../pages/login/asset/Group.svg' 
 import classes from "./Navbar.module.scss"
+import { CiMenuFries } from 'react-icons/ci'
 
 const Navbar = () => {
+    const [isMenuOpen, setIsMenuOpen] = React.useState<boolean>(false)
+    
   return (
     <section className={classes.nav}>
         <div className={classes.nav__logo_form}>
@@ -36,6 +39,13 @@ const Navbar = () => {
                 <h2>Adedeji</h2>
                 <MdOutlineArrowDropDown style={{cursor: 'pointer'}}/>
             </div>
+        </div>
+        <div className={classes.nav__toggle}>
+            {isMenuOpen ? 
+            <MdOutlineClose size={20} onClick={()=>setIsMenuOpen(!isMenuOpen)} />
+            :
+            <CiMenuFries size={20} onClick={()=>setIsMenuOpen(!isMenuOpen)}/>
+            }
         </div>
 
         

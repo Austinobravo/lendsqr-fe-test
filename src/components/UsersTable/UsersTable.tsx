@@ -7,6 +7,7 @@ import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io'
 import FiltersForm from '../FiltersForm/FiltersForm'
 import { BiUser } from 'react-icons/bi'
 import { Link } from 'react-router-dom'
+import { TbUserCheck, TbUserX } from 'react-icons/tb'
 
 const TableContents = [
     {
@@ -127,11 +128,11 @@ const UsersTable = () => {
                     <Link to={`/dashboard/grace`}> View Details</Link>
                 </div>
                 <div>
-                    <BiUser/>
+                    <TbUserX />
                     <Link to={``}> Blacklist User</Link>
                 </div>
                 <div>
-                    <BsEye/>
+                    <TbUserCheck/>
                     <Link to={``}> Activate User</Link>
                 </div>
 

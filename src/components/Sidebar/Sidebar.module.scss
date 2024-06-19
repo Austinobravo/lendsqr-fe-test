@@ -1,4 +1,12 @@
-
+@mixin breakpoint($point){
+    @if $point == md{
+        //768px == 48em
+        @media(max-width: 48em){
+            @content 
+        }
+    }
+    
+}
 $primary: #39CDCC;
 $secondary: #213F7D;
 
@@ -9,6 +17,9 @@ $secondary: #213F7D;
     font-size: 14px;
     color: $secondary;
     position: absolute;
+    @include breakpoint(md){
+        display: none;
+    }
     
     
     h1{
@@ -67,5 +78,18 @@ $secondary: #213F7D;
             
         }
 
+    }
+}
+
+.mobile_sidebar{
+    background-color: #fff;
+    width: 20px;
+    padding: 0 1.5rem;
+    font-size: 14px;
+    color: $secondary;
+    position: absolute;
+    display: none;
+    @include breakpoint(md){
+        display: block;
     }
 }

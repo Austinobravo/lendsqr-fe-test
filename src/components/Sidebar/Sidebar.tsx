@@ -1,52 +1,63 @@
 import React from 'react'
 import { BiUser } from 'react-icons/bi'
-import { BsBag } from 'react-icons/bs'
-import { MdDashboard } from 'react-icons/md'
+import { BsBag, BsHouseHeart } from 'react-icons/bs'
+import { MdDashboard, MdOutlinePhonelinkSetup, MdOutlineSavings } from 'react-icons/md'
 import { Link } from 'react-router-dom'
 import { RiArrowDropDownLine } from "react-icons/ri";
 import classes from './Sidebar.module.scss'
 import { IoLogOut } from 'react-icons/io5'
+import { FaBriefcase, FaHouseChimney } from 'react-icons/fa6'
+import { HiOutlineUsers } from 'react-icons/hi2'
+import { PiScrollFill, PiUsersThreeFill } from 'react-icons/pi'
+import { TbMoneybag, TbRosetteDiscount } from 'react-icons/tb'
+import { FaCoins, FaRegHandshake, FaUserCheck, FaUserCog, FaUserTimes } from 'react-icons/fa'
+import { GiReceiveMoney, GiSpiralTentacle } from 'react-icons/gi'
+import { FcSettings, FcStatistics } from 'react-icons/fc'
+import { VscSettings } from 'react-icons/vsc'
+import { FiDivideCircle } from 'react-icons/fi'
+import { AiOutlineAudit } from 'react-icons/ai'
+import { LuLogOut } from 'react-icons/lu'
 const SidebarContents = [
     {
         title: "CUSTOMERS",
         downline: [
             {
-                icon: BiUser,
+                icon: HiOutlineUsers,
                 title: "Users",
                 path: ""
             },
             {
-                icon: BiUser,
+                icon: PiUsersThreeFill,
                 title: "Guarantors",
                 path: ""
             },
             {
-                icon: BiUser,
+                icon: TbMoneybag,
                 title: "Loans",
                 path: ""
             },
             {
-                icon: BiUser,
+                icon: FaRegHandshake,
                 title: "Decision Models",
                 path: ""
             },
             {
-                icon: BiUser,
+                icon: MdOutlineSavings,
                 title: "Savings",
                 path: ""
             },
             {
-                icon: BiUser,
+                icon: GiReceiveMoney,
                 title: "Loan Request",
                 path: ""
             },
             {
-                icon: BiUser,
+                icon: FaUserCheck,
                 title: "Whitelist",
                 path: ""
             },
             {
-                icon: BiUser,
+                icon: FaUserTimes,
                 title: "Karma",
                 path: ""
             },
@@ -56,47 +67,47 @@ const SidebarContents = [
         title: "BUSINESSES",
         downline: [
             {
-                icon: BiUser,
+                icon: FaBriefcase,
                 title: "Organization",
                 path: ""
             },
             {
-                icon: BiUser,
+                icon: GiReceiveMoney,
                 title: "Loan Products",
                 path: ""
             },
             {
-                icon: BiUser,
+                icon: BsHouseHeart,
                 title: "Savings Products",
                 path: ""
             },
             {
-                icon: BiUser,
+                icon: FaCoins,
                 title: "Fees and Charges",
                 path: ""
             },
             {
-                icon: BiUser,
+                icon: MdOutlinePhonelinkSetup,
                 title: "Transactions",
                 path: ""
             },
             {
-                icon: BiUser,
+                icon: GiSpiralTentacle,
                 title: "Services",
                 path: ""
             },
             {
-                icon: BiUser,
+                icon: FaUserCog,
                 title: "Service Account",
                 path: ""
             },
             {
-                icon: BiUser,
+                icon: PiScrollFill,
                 title: "Settlements",
                 path: ""
             },
             {
-                icon: BiUser,
+                icon: FcStatistics,
                 title: "Reports",
                 path: ""
             },
@@ -106,22 +117,22 @@ const SidebarContents = [
         title: "SETTINGS",
         downline: [
             {
-                icon: BiUser,
+                icon: VscSettings,
                 title: "Preferences",
                 path: ""
             },
             {
-                icon: BiUser,
+                icon: TbRosetteDiscount,
                 title: "Fees and Pricing",
                 path: ""
             },
             {
-                icon: BiUser,
+                icon: AiOutlineAudit,
                 title: "Audit Logs",
                 path: ""
             },
             {
-                icon: BiUser,
+                icon: FcSettings,
                 title: "System Messages",
                 path: ""
             },
@@ -131,14 +142,15 @@ const SidebarContents = [
 ]
 const Sidebar = () => {
   return (
+    <>
     <section className={classes.sidebar}>
         <div className={classes.sidebar__organization}>
-            <BsBag/>
+            <FaBriefcase />
             <Link to={``}>Switch Organization</Link>
             <RiArrowDropDownLine/>
         </div>
         <div className={classes.sidebar__dashboard}>
-            <MdDashboard/>
+            <FaHouseChimney />
             <h1>Dashboard</h1>
         </div>
         {SidebarContents.map((content, index) => (
@@ -160,15 +172,46 @@ const Sidebar = () => {
         ))}
         <div className={classes.sidebar__logout}>
             <Link to={``}>
-                <IoLogOut style={{position: "absolute", }}/>
+                <LuLogOut style={{position: "absolute", }}/>
                 <span>
                     Logout
                 </span>
             </Link>
 
         </div>
+
         
     </section>
+    <section className={classes.mobile_sidebar}>
+        <div>
+            <FaBriefcase />
+            <RiArrowDropDownLine/>
+        </div>
+        <div >
+            <FaHouseChimney />
+        </div>
+        {SidebarContents.map((content, index) => (
+            <div key={index}>
+                <div className={classes.sidebar__downlines}>
+                    {content.downline.map((downlines, index) => (
+                        <Link to={downlines.path} key={index} style={{borderLeft: downlines.title === 'Users' ? "3px solid #39CDCC": '', margin: downlines.title === 'Users' ? '0 -20px 0 -20px' : '', paddingLeft: downlines.title === 'Users' ? '20px': '', backgroundColor: downlines.title === 'Users' ? '#ecf7f7' :''}}>
+                            <downlines.icon/>
+                        </Link>
+                    ))}
+                </div>
+
+            </div>
+        ))}
+        <div className={classes.sidebar__logout}>
+            <Link to={``}>
+                <LuLogOut style={{position: "absolute", }}/>
+            </Link>
+
+        </div>
+
+
+    </section>
+    </>
   )
 }
 
