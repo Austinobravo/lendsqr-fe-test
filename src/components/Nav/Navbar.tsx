@@ -82,7 +82,7 @@ const Navbar = () => {
         </div>
 
         {isMenuOpen && 
-            <div className={`${classes.modal_overlay} ${classes.display_properly}`}>
+            <div className={`${classes.modal_overlay} ${classes.display_properly}`} onClick={()=>setIsMenuOpen(!isMenuOpen)}>
                 <section className={classes.sidebar}>
                     <div className={classes.sidebar__organization}>
                         <FaBriefcase />
