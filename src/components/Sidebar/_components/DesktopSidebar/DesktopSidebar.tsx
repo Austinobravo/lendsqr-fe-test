@@ -9,7 +9,10 @@ import {SidebarContents} from '../../../../../global/content';
 
 const DesktopSidebar = () => {
   const pathname = window.location.pathname
-  console.log("pathname",pathname)
+  const Logout = () => {
+    localStorage.removeItem('userDetails')
+    location.reload()
+  }
   return (
     <section className={classes.sidebar}>
     <div className={classes.sidebar__organization}>
@@ -38,13 +41,13 @@ const DesktopSidebar = () => {
 
         </div>
     ))}
-    <div className={classes.sidebar__logout}>
-        <Link to={``}>
+    <div className={classes.sidebar__logout} onClick={Logout}>
+        {/* <Link to={``}> */}
             <LuLogOut style={{position: "absolute", }}/>
             <span>
                 Logout
             </span>
-        </Link>
+        {/* </Link> */}
 
     </div>
 

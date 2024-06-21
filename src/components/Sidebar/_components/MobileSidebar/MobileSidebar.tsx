@@ -9,7 +9,10 @@ import { SidebarContents } from '../../../../../global/content';
 
 const MobileSidebar = () => {
   const pathname = window.location.pathname
-
+  const Logout = () => {
+    localStorage.removeItem('userDetails')
+    location.reload()
+  }
   return (
     <section className={classes.mobile_sidebar}>
     <div>
@@ -31,10 +34,8 @@ const MobileSidebar = () => {
 
         </div>
     ))}
-    <div className={classes.sidebar__logout}>
-        <Link to={``}>
+    <div className={classes.sidebar__logout} onClick={Logout}>
             <LuLogOut style={{position: "absolute", }}/>
-        </Link>
 
     </div>
 

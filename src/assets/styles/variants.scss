@@ -15,7 +15,6 @@ $work_sans: "Work Sans", sans-serif;
 
 $primary: #39CDCC;
 $secondary: #213F7D;
-
 @mixin breakpoint($point){
     @if $point == md{
         //768px == 48em
@@ -24,7 +23,17 @@ $secondary: #213F7D;
         }
     }
     
-}
+};
+
+// @mixin breakpoint($point){
+//     @if $point == sm{
+//         //384px == 48em
+//         @media(max-width: 24em){
+//             @content 
+//         }
+//     }
+    
+// };
 
 body{
     background-color: rgba(207, 207, 207, 0.1);
