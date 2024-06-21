@@ -40,7 +40,7 @@ const Navbar = () => {
             <div className={classes.nav__form}>
                 <form>
                     <div>
-                        <input type='text' name='search' id='search' placeholder='Search for anything'/>
+                        <input type='text' name='search' id='search' placeholder='Search for anything.'/>
                     </div>
                     <button>
                         <BiSearch color='#fff' size={15}/>
