@@ -1,9 +1,9 @@
-import "./styles/Login.module.scss"
+// import "./styles/Login.module.scss"
 import React from "react"
-import Logo from './asset/Group.svg'
-import Banner from './asset/pablo-sign-in 1.svg'
+import Logo from '../../assets/images/Group.svg'
+import Banner from '../../assets/images/pablo-sign-in 1.svg'
 import { Link } from "react-router-dom"
-import classes from "./styles/Login.module.scss"
+import classes from "./Login.module.scss"
 
 const Login = () => {
   const [isPasswordShown, setIsPasswordShown] = React.useState<boolean>(false)

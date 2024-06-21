@@ -1,0 +1,85 @@
+@import '../../../../assets/styles/variants.scss';
+
+
+.sidebar{
+    background-color: #fff;
+    width: 230px;
+    padding: 0 1.5rem;
+    font-size: 14px;
+    color: $secondary;
+    position: absolute;
+    @include breakpoint(md){
+        display: none;
+    }
+    
+    
+    h1{
+        font-size: 14px;
+        font-weight: 500;
+        padding: 7px 0 ;
+    }
+    h2{
+        font-size: 14px;
+        font-weight: 500;
+        padding-top: 18px ;
+        padding-bottom: 10px ;
+    }
+    a{
+        text-decoration: none;
+        color: $secondary;
+    }
+    &__organization{
+        display: flex;
+        align-items: center;
+        padding-top: 1rem;
+        a{
+            padding-left: 10px;
+        }
+    }
+    
+    &__dashboard{
+        display: flex;
+        align-items: center;
+        padding: 1rem 0;
+        h1{
+            padding-left: 10px;
+        }
+    }
+    
+    &__downlines{
+        display: flex;
+        flex-direction: column;
+        opacity: .8;
+        a{
+            padding: 9px 0;
+        }
+        span{
+            padding-left: 10px;
+            
+        }
+    }
+    
+    &__logout{
+        margin: 8rem 0 0;
+        border-top: 1px solid #ccc;
+        padding: 1rem 0;
+        position: relative;
+        span{
+            padding-left: 20px;
+            
+        }
+
+    }
+}
+.mobile_sidebar{
+    background-color: #fff;
+    width: 20px;
+    padding: 0 1.5rem;
+    font-size: 14px;
+    color: $secondary;
+    position: absolute;
+    display: none;
+    @include breakpoint(md){
+        display: block;
+    }
+}

@@ -1,15 +1,5 @@
-@mixin breakpoint($point){
-    @if $point == md{
-        //768px == 48em
-        @media(max-width: 48em){
-            @content 
-        }
-    }
-    
-}
+@import '../../assets/styles/variants.scss';
 
-$primary: #39CDCC;
-$secondary: #213F7D;
 
 .users{
     padding-left: 280px;

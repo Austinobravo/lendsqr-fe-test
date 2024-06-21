@@ -1,14 +1,5 @@
-@mixin breakpoint($point){
-    @if $point == md{
-        //768px == 48em
-        @media(max-width: 48em){
-            @content 
-        }
-    }
-    
-}
-$primary: #39CDCC;
-$secondary: #213F7D;
+@import '../../../../assets/styles/variants.scss';
+
 
 .user_full_detail{
     background-color: #fff;

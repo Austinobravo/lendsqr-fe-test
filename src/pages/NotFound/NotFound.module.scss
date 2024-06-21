@@ -1,0 +1,8 @@
+@import '../../assets/styles/variants.scss';
+.not_found{
+    padding: 2rem 2rem 0 280px;
+    text-align: center;
+    @include breakpoint(md){
+        padding: 2rem 2rem 0 60px;
+    }
+}

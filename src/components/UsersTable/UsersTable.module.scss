@@ -1,14 +1,5 @@
-@mixin breakpoint($point){
-    @if $point == md{
-        //768px == 48em
-        @media(max-width: 48em){
-            @content 
-        }
-    }
-    
-}
-$primary: #39CDCC;
-$secondary: #213F7D;
+@import '../../assets/styles/variants.scss';
+
 
 .users_table{
     margin: 2rem 2rem 0 280px;
@@ -156,9 +147,15 @@ $secondary: #213F7D;
     position: absolute;
     top: 80px;
     right: -9px;
-    @include breakpoint(md){
-       
-        
+    @include breakpoint(md) {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 90%;
+        max-width: 400px;
+        box-shadow: 0 ;
+        z-index: 1000;
     }
     div{
         padding: 7px 0;
@@ -169,5 +166,10 @@ $secondary: #213F7D;
     a{
         text-decoration: none;
         color: #000;
+    }
+    button{
+        border: none;
+        background: transparent;
+        cursor: pointer;
     }
 }

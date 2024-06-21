@@ -1,14 +1,5 @@
-@mixin breakpoint($point){
-    @if $point == md{
-        //768px == 48em
-        @media(max-width: 48em){
-            @content 
-        }
-    }
-    
-}
-$primary: #39CDCC;
-$secondary: #213F7D;
+@import '../../../../assets/styles/variants.scss';
+
 
 .user_detail{
     padding: 2rem 2rem 0 280px;
@@ -50,7 +41,7 @@ $secondary: #213F7D;
         font-weight: 600;
         cursor: pointer;
         @include breakpoint(md){
-            margin: 1rem 0 1rem;
+            margin: 1rem 8px 1rem 0;
 
         }
     }
@@ -151,6 +142,14 @@ $secondary: #213F7D;
             font-size: 11px;
           }
         }
+
+    }
+    &__not_found{
+        font-size: 1rem;
+        text-align: center;
+        font-weight: 600;
+        padding: 2rem 0;
+        
     }
 }
 

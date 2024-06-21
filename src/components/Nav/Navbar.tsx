@@ -2,14 +2,35 @@ import React from 'react'
 import { BiBell, BiSearch } from 'react-icons/bi'
 import { MdOutlineArrowDropDown, MdOutlineClose } from "react-icons/md"
 import { Link } from 'react-router-dom'
-import Avatar from '../../pages/dashboard/assets/image 4.png'
-import Logo from '../../pages/login/asset/Group.svg' 
+import Avatar from '../../assets/images/image 4.png'
+import Logo from '../../assets/images/Group.svg' 
 import classes from "./Navbar.module.scss"
 import { CiMenuFries } from 'react-icons/ci'
+import { UserData } from '../../../types/types'
+import { RiArrowDropDownLine } from "react-icons/ri";
+import { FaBriefcase, FaHouseChimney } from 'react-icons/fa6'
+import { LuLogOut } from 'react-icons/lu'
+import { SidebarContents } from '../../../global/content'
+
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = React.useState<boolean>(false)
-    
+    const [isThereUserData, setIsThereUserData] = React.useState<boolean>(true)
+    const [userDetails, setUserDetails] = React.useState({} as UserData | null)
+
+    React.useEffect(()=>{
+        const data = JSON.parse(localStorage.getItem('userDetails') as string)
+        setIsThereUserData(!!data)
+
+
+    },[isThereUserData])
+    React.useEffect(()=>{
+        const data = JSON.parse(localStorage.getItem('userDetails') as string)
+        if(isThereUserData){
+            setUserDetails(data)
+        }
+
+    },[isThereUserData])
   return (
     <section className={classes.nav}>
         <div className={classes.nav__logo_form}>
@@ -36,17 +57,70 @@ const Navbar = () => {
             </div>
             <div className={classes.nav__personal_details_avatar}>
                 <img src={Avatar} alt='avatar'/>
-                <h2>Adedeji</h2>
+                <h2>
+                    {userDetails?.username ?
+                        userDetails.username
+                        :
+                        "Anonymous"    
+                    }
+                </h2>
                 <MdOutlineArrowDropDown style={{cursor: 'pointer'}}/>
             </div>
         </div>
         <div className={classes.nav__toggle}>
-            {isMenuOpen ? 
-            <MdOutlineClose size={20} onClick={()=>setIsMenuOpen(!isMenuOpen)} />
-            :
-            <CiMenuFries size={20} onClick={()=>setIsMenuOpen(!isMenuOpen)}/>
+            {!isMenuOpen && 
+                <CiMenuFries size={30} onClick={()=>setIsMenuOpen(!isMenuOpen)}/>
             }
         </div>
+
+        {isMenuOpen && 
+            <div className={`${classes.modal_overlay} ${classes.display_properly}`}>
+                <section className={classes.sidebar}>
+                    <div className={classes.sidebar__organization}>
+                        <FaBriefcase />
+                        <Link to={``}>Switch Organization</Link>
+                        <RiArrowDropDownLine/>
+                    </div>
+                    <div className={classes.sidebar__dashboard}>
+                        <FaHouseChimney />
+                        <h1>Dashboard</h1>
+                    </div>
+                    {SidebarContents.map((content, index) => (
+                        <div key={index}>
+                            <h2>{content.title}</h2>
+                            <div className={classes.sidebar__downlines}>
+                                {content.downline.map((downlines, index) => (
+                                    <Link to={downlines.path} key={index} style={{borderLeft: downlines.title === 'Users' ? "3px solid #39CDCC": '', margin: downlines.title === 'Users' ? '0 -20px 0 -20px' : '', paddingLeft: downlines.title === 'Users' ? '20px': '', backgroundColor: downlines.title === 'Users' ? '#ecf7f7' :''}}>
+                                        <downlines.icon/>
+                                        <span>
+                                            {downlines.title}
+                                        </span>
+
+                                    </Link>
+                                ))}
+                            </div>
+
+                        </div>
+                    ))}
+                    <div className={classes.sidebar__logout}>
+                        <Link to={``}>
+                            <LuLogOut style={{position: "absolute", }}/>
+                            <span>
+                                Logout
+                            </span>
+                        </Link>
+
+                    </div>
+
+                    
+                </section>
+                <div/>
+                <div className={classes.display_properly__toggle}>
+                    <MdOutlineClose size={30} onClick={()=>setIsMenuOpen(!isMenuOpen)} />
+                </div>
+
+            </div>
+        }
 
         
     </section>

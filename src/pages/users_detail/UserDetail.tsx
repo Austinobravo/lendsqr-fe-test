@@ -1,7 +1,9 @@
-import React from 'react'
+
 import UserDetailCard from './_components/UserDetailCard/UserDetailCard'
 
+
 const UserDetail = () => {
+
   return (
     <>
         <div>

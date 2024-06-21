@@ -1,5 +1,5 @@
 
-import classes from './styles/Dashboard.module.scss'
+import classes from './Dashboard.module.scss'
 import Navbar from '../../components/Nav/Navbar'
 import { Outlet } from 'react-router-dom'
 import Sidebar from '../../components/Sidebar/Sidebar'
