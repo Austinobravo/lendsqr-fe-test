@@ -1,5 +1,3 @@
-import React from 'react'
-import { BiUser } from 'react-icons/bi'
 import classes from './Users.module.scss'
 import { PiCoinsDuotone, PiUsers, PiUsersThree } from 'react-icons/pi'
 import { LiaCoinsSolid } from 'react-icons/lia'

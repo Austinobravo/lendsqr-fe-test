@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { IoFilter } from 'react-icons/io5';
 import classes from './UsersTable.module.scss';
 import { BsEye, BsThreeDotsVertical } from 'react-icons/bs';
@@ -15,7 +15,7 @@ const UsersTable = () => {
     const [isCardFilterOpen, setIsCardFilterOpen] = React.useState(false);
     const [currentPage, setCurrentPage] = React.useState(1);
     const [itemsPerPage, setItemsPerPage] = React.useState(10);
-    const [filteredData, setFilteredData] = React.useState(Data);
+    const [filteredData] = React.useState(Data);
     const [userData, setUserData] = React.useState({} as UserData)
     const totalPages = Math.ceil(filteredData.length / itemsPerPage);
     const navigate = useNavigate()
