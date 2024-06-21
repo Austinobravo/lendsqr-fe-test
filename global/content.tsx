@@ -18,7 +18,7 @@ export const SidebarContents = [
             {
                 icon: HiOutlineUsers,
                 title: "Users",
-                path: ""
+                path: "/dashboard"
             },
             {
                 icon: PiUsersThreeFill,

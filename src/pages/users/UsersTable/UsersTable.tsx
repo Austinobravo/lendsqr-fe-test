@@ -4,11 +4,11 @@ import classes from './UsersTable.module.scss';
 import { BsEye, BsThreeDotsVertical } from 'react-icons/bs';
 import { HiOutlineDotsHorizontal } from 'react-icons/hi';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
-import FiltersForm from '../FiltersForm/FiltersForm';
+import FiltersForm from '../../../components/FiltersForm/FiltersForm';
 import { Link, useNavigate } from 'react-router-dom';
 import { TbUserCheck, TbUserX } from 'react-icons/tb';
-import  {Data} from '../../../data.json';
-import {UserData} from '../../../types/types'
+import  {Data} from '../../../../data.json';
+import {UserData} from '../../../../types/types'
 
 const UsersTable = () => {
     const [isFormOpen, setIsFormOpen] = React.useState(false);

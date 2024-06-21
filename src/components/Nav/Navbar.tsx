@@ -1,7 +1,7 @@
 import React from 'react'
 import { BiBell, BiSearch } from 'react-icons/bi'
 import { MdOutlineArrowDropDown, MdOutlineClose } from "react-icons/md"
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import Avatar from '../../assets/images/image 4.png'
 import Logo from '../../assets/images/Group.svg' 
 import classes from "./Navbar.module.scss"
@@ -17,6 +17,8 @@ const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = React.useState<boolean>(false)
     const [isThereUserData, setIsThereUserData] = React.useState<boolean>(true)
     const [userDetails, setUserDetails] = React.useState({} as UserData | null)
+    const pathname = window.location.pathname
+    const navigate = useNavigate()
 
     React.useEffect(()=>{
         const data = JSON.parse(localStorage.getItem('userDetails') as string)
@@ -31,6 +33,12 @@ const Navbar = () => {
         }
 
     },[isThereUserData])
+
+    const Logout = () => {
+        localStorage.removeItem('userDetails')
+        navigate("/")
+        location.reload()
+      }
   return (
     <section className={classes.nav}>
         <div className={classes.nav__logo_form}>
@@ -90,7 +98,7 @@ const Navbar = () => {
                             <h2>{content.title}</h2>
                             <div className={classes.sidebar__downlines}>
                                 {content.downline.map((downlines, index) => (
-                                    <Link to={downlines.path} key={index} style={{borderLeft: downlines.title === 'Users' ? "3px solid #39CDCC": '', margin: downlines.title === 'Users' ? '0 -20px 0 -20px' : '', paddingLeft: downlines.title === 'Users' ? '20px': '', backgroundColor: downlines.title === 'Users' ? '#ecf7f7' :''}}>
+                                    <Link to={downlines.path} key={index} onClick={()=>setIsMenuOpen(!isMenuOpen)}  style={{borderLeft: pathname.includes(downlines.path) ? "3px solid #39CDCC": '', margin: pathname.includes(downlines.path) ? '0 -20px 0 -20px' : '', paddingLeft: pathname.includes(downlines.path) ? '20px': '', backgroundColor: pathname.includes(downlines.path) ? '#ecf7f7' :''}}>
                                         <downlines.icon/>
                                         <span>
                                             {downlines.title}
@@ -102,14 +110,11 @@ const Navbar = () => {
 
                         </div>
                     ))}
-                    <div className={classes.sidebar__logout}>
-                        <Link to={``}>
+                    <div className={classes.sidebar__logout} onClick={Logout}>
                             <LuLogOut style={{position: "absolute", }}/>
                             <span>
                                 Logout
                             </span>
-                        </Link>
-
                     </div>
 
                     

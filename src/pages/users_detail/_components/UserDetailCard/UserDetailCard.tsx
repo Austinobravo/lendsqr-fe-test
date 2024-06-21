@@ -42,14 +42,12 @@ const UserDetailCard = () => {
 
     React.useEffect(()=>{
         const data = JSON.parse(localStorage.getItem('userDetails') as string)
-        console.log("first data",data)
         setIsThereUserData(!!data)
 
 
     },[username])
     React.useEffect(()=>{
         const data = JSON.parse(localStorage.getItem('userDetails') as string)
-        console.log("second data",data)
        
         if(isThereUserData){
             setUserDetails(data)

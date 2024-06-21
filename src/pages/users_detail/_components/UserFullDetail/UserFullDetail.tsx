@@ -67,7 +67,7 @@ const UserFullDetail = ({userDetails}: {userDetails: UserData | null}) => {
                 </div>
                 <div>
                     <h4>MONTHLY INCOME</h4>
-                    <p>N200,000.00 - N400,000.00 {userDetails?.monthlyPay}</p>
+                    <p>N200,000.00 - N400,000.00 </p>
                 </div>
                 <div>
                     <h4>LOAN REPAYMENT</h4>

@@ -38,6 +38,18 @@
     @include breakpoint(md){
         flex-basis: 100%;
     }
+
+    &__logo{
+        display: none;
+        @include breakpoint(md){
+            display: flex;
+            justify-content: center;
+
+            img{
+                width: 100px;
+            }
+        }
+    }
     
 
     &__text{

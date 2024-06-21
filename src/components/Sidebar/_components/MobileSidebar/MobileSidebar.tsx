@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { RiArrowDropDownLine } from "react-icons/ri";
 import classes from './MobileSidebar.module.scss'
 
@@ -9,8 +9,10 @@ import { SidebarContents } from '../../../../../global/content';
 
 const MobileSidebar = () => {
   const pathname = window.location.pathname
+  const navigate = useNavigate()
   const Logout = () => {
     localStorage.removeItem('userDetails')
+    navigate("/")
     location.reload()
   }
   return (
