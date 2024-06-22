@@ -112,7 +112,9 @@ const UsersTable = () => {
     };
 
     return (
-        <section className={classes.users_table}>
+        <>
+        {currentData.length > 0 ? 
+        <section className={classes.users_table}>  
             <table>
                 <thead>
                     <tr>
@@ -205,6 +207,12 @@ const UsersTable = () => {
 
            
         </section>
+        :
+        <section className={classes.users_table}>
+            <p className={classes.users_table__not_found}>NO USER DATA</p>
+        </section>
+        }
+        </>
     );
 }
 

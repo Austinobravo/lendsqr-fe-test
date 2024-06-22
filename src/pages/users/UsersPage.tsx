@@ -1,6 +1,6 @@
 
 import Users from './Users/Users'
-import UsersTable from './UsersTable/UsersTable'
+import UsersTable from '../users/UsersTable/UsersTable'
 
 const UsersPage = () => {
   return (

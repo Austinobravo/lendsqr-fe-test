@@ -2,6 +2,7 @@ import classes from './Users.module.scss'
 import { PiCoinsDuotone, PiUsers, PiUsersThree } from 'react-icons/pi'
 import { LiaCoinsSolid } from 'react-icons/lia'
 import {Data} from "../../../../data.json"
+
 const UserDetails = [
     {
         icon: PiUsers,
@@ -38,6 +39,7 @@ const Users = () => {
         <div>
             <h2>Users</h2>
         </div>
+        {Data.length > 0 ?
         <div className={classes.users__details}>
             {UserDetails.map((user, index) => (
                 <div key={index} className={classes.users__individual_details}>
@@ -50,6 +52,9 @@ const Users = () => {
                 </div>
             ))}
         </div>
+        :
+        <div></div>
+        }
     </section>
   )
 }
